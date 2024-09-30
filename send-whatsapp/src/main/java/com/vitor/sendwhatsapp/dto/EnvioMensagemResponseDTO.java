@@ -1,10 +1,8 @@
-package com.vitor.send_message_email.dto.request;
+package com.vitor.sendwhatsapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@ToString
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

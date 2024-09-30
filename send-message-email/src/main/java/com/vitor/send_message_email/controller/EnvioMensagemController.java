@@ -1,7 +1,7 @@
 package com.vitor.send_message_email.controller;
 
 import com.vitor.send_message_email.dto.request.EnvioMensagemRequestDTO;
-import com.vitor.send_message_email.dto.request.EnvioMensagemResponseDTO;
+import com.vitor.send_message_email.dto.response.EnvioMensagemResponseDTO;
 import com.vitor.send_message_email.services.EnvioMensagemService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

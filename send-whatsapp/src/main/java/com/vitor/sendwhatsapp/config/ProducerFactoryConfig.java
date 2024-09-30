@@ -1,6 +1,6 @@
-package com.vitor.send_message_email.config;
+package com.vitor.sendwhatsapp.config;
 
-import com.vitor.send_message_email.dto.response.EnvioMensagemResponseDTO;
+import com.vitor.sendwhatsapp.dto.EnvioMensagemResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

@@ -1,0 +1,17 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: send-whatsapp
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
+    producer:
+      bootstrap-servers: localhost:29092
+
+
+app:
+  whatsapp:
+    instance: ${INSTANCE_ZAPI}
+    token: ${TOKEN_ZAPI}

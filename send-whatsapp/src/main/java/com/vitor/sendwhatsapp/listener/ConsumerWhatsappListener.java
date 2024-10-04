@@ -15,7 +15,7 @@ public class ConsumerWhatsappListener {
 
     private final SendWhatsappService sendWhatsappService;
 
-    @KafkaListener(groupId = "grupo-mensagem", topics = "envio-mensagem", containerFactory = "concurrentConsumerFactory")
+    @KafkaListener(groupId = "grupo-whatsapp", topics = "envio-mensagem", containerFactory = "concurrentConsumerFactory")
     public void listener(@Payload EnvioMensagemResponseDTO envioMensagemResponse) {
         log.info("Mensagem recebida: {}", envioMensagemResponse.toString());
         sendWhatsappService.enviarMensagemWhatsapp(envioMensagemResponse);

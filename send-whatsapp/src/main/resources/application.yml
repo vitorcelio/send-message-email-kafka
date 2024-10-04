@@ -6,9 +6,9 @@ spring:
     name: send-whatsapp
   kafka:
     consumer:
-      bootstrap-servers: localhost:29092
+      bootstrap-servers: ${KAFKA_URL}
     producer:
-      bootstrap-servers: localhost:29092
+      bootstrap-servers: ${KAFKA_URL}
 
 
 app:

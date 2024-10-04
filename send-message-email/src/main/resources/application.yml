@@ -1,16 +1,18 @@
 spring:
   application:
     name: envioMensagemEmail
-# Configurações do Kafka
+
+# Configuracoes do Kafka
   kafka:
     producer:
-      bootstrap-servers: ${KAFKA_URL:localhost:9092}
-# Configurações do banco de dados
+      bootstrap-servers: ${KAFKA_URL}
+
+# Configuracoes do banco de dados
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/sendMessageEmail}
-    password: ${POSTGRES_PASSWORD:postgres}
-    username: ${POSTGRES_USERNAME:postgres}
+    url: ${POSTGRES_URL}
+    password: ${POSTGRES_PASSWORD}
+    username: ${POSTGRES_USERNAME}
     hikari:
       maximum-pool-size: 5
       connection-timeout: 20000

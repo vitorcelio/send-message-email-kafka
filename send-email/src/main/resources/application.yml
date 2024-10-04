@@ -1,0 +1,28 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: send-email
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_URL}
+    producer:
+      bootstrap-servers: ${KAFKA_URL}
+
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+mail:
+  from:
+    name: ${MEU_NOME}

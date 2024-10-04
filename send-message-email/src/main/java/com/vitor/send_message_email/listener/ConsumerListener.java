@@ -17,8 +17,14 @@ public class ConsumerListener {
 
     @KafkaListener(groupId = "grupo-whatsapp", topics = "response-whatsapp", containerFactory = "concurrentConsumerFactory")
     public void whatsapp(@Payload EnvioMensagemResponseDTO envioMensagem) {
-        log.info("Recebi a resposta do envio de mensagens do Whatsapp: {}", envioMensagem.toString());
-        service.update(envioMensagem);
+        log.info("Recebi a resposta do envio de mensagens do Whatsapp: {}", envioMensagem.isEnvioWhatsapp());
+        service.update(envioMensagem, false);
+    }
+
+    @KafkaListener(groupId = "grupo-email", topics = "response-email", containerFactory = "concurrentConsumerFactory")
+    public void email(@Payload EnvioMensagemResponseDTO envioMensagem) {
+        log.info("Recebi a resposta do envio de Email: {}", envioMensagem.isEnvioEmail());
+        service.update(envioMensagem, true);
     }
 
 }

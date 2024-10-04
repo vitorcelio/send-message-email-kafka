@@ -46,14 +46,19 @@ public class EnvioMensagemService {
         }
     }
 
-    public void update(EnvioMensagemResponseDTO envioMensagem) {
+    public void update(EnvioMensagemResponseDTO envioMensagem, boolean isEmail) {
 
         try {
             EnvioMensagem mensagem =
                     repository.findById(envioMensagem.getId()).orElseThrow(() -> new NotFoundEnvioMensagemException(
                             "Envio da mensagem não encontrado"));
 
-            BeanUtils.copyProperties(envioMensagem, mensagem);
+            if(isEmail){
+                mensagem.setEnvioEmail(envioMensagem.isEnvioEmail());
+            } else {
+                mensagem.setEnvioWhatsapp(envioMensagem.isEnvioWhatsapp());
+            }
+
             repository.save(mensagem);
             log.info("Envio da mensagem atualizada: {}", mensagem);
         } catch (Exception e) {
